@@ -1,0 +1,49 @@
+diff --git a/src/tuxedo_compatibility_check/tuxedo_compatibility_check.c b/src/tuxedo_compatibility_check/tuxedo_compatibility_check.c
+--- a/src/tuxedo_compatibility_check/tuxedo_compatibility_check.c
++++ b/src/tuxedo_compatibility_check/tuxedo_compatibility_check.c
+@@ -216,6 +216,21 @@ static const struct dmi_system_id tuxedo_dmi_string_match[] = {
+ 			DMI_MATCH(DMI_CHASSIS_VENDOR, "TUXEDO"),
+ 		},
+ 	},
++	{
++		.matches = {
++			DMI_MATCH(DMI_SYS_VENDOR, "MECHREVO"),
++		},
++	},
++	{
++		.matches = {
++			DMI_MATCH(DMI_BOARD_VENDOR, "MECHREVO"),
++		},
++	},
++	{
++		.matches = {
++			DMI_MATCH(DMI_CHASSIS_VENDOR, "MECHREVO"),
++		},
++	},
+ 	{ }
+ };
+ 
+diff --git a/src/tuxedo_io/tuxedo_io.c b/src/tuxedo_io/tuxedo_io.c
+--- a/src/tuxedo_io/tuxedo_io.c
++++ b/src/tuxedo_io/tuxedo_io.c
+@@ -246,6 +246,9 @@ static void uw_id_tdp(void)
+	} else if (dmi_match(DMI_BOARD_NAME, "X5KK45xS_X5SP45xS")) {
+		tdp_min_defs = tdp_min_xxxx45xs;
+		tdp_max_defs = tdp_max_xxxx45xs;
++	} else if (dmi_match(DMI_BOARD_NAME, "JIAOLONG Series-X6xR55xK")) {
++		tdp_min_defs = tdp_min_x6fr5xx;
++		tdp_max_defs = tdp_max_x6fr5xx;
+	} else if (dmi_match(DMI_BOARD_NAME, "X6AR55xU")) {
+		tdp_min_defs = tdp_min_x6ar55xu;
+		tdp_max_defs = tdp_max_x6ar55xu;
+diff --git a/src/uniwill_keyboard.h b/src/uniwill_keyboard.h
+--- a/src/uniwill_keyboard.h
++++ b/src/uniwill_keyboard.h
+@@ -1758,6 +1758,7 @@ struct uniwill_device_features_t *uniwill_get_device_features(void)
+		|| dmi_match(DMI_BOARD_NAME, "XxKK4NAx_XxSP4NAx")
+		|| dmi_match(DMI_BOARD_NAME, "X5KK45xS_X5SP45xS")
+		|| dmi_match(DMI_BOARD_NAME, "X6KK45xU_X6SP45xU")
++		|| dmi_match(DMI_BOARD_NAME, "JIAOLONG Series-X6xR55xK")
+		|| dmi_match(DMI_BOARD_NAME, "X6AR55xU")
+		|| dmi_match(DMI_BOARD_NAME, "X5AR45xS")
+#endif

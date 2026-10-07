@@ -39,6 +39,15 @@ diff --git a/src/tuxedo_io/tuxedo_io.c b/src/tuxedo_io/tuxedo_io.c
 diff --git a/src/uniwill_keyboard.h b/src/uniwill_keyboard.h
 --- a/src/uniwill_keyboard.h
 +++ b/src/uniwill_keyboard.h
+@@ -83,6 +83,8 @@ static struct key_entry uniwill_wmi_keymap[] = {
+	// { KE_KEY,	UNIWILL_OSD_RADIOON,		{ KEY_RFKILL } },
+	// { KE_KEY,	UNIWILL_OSD_RADIOOFF,		{ KEY_RFKILL } },
+	// { KE_KEY,	0xb0,				{ KEY_F13 } },
++	//MECHREVO JIAOLONG Series X6FR57TK KEY_ROTATE_DISPLAY
++	{ KE_KEY,	208,				{ KEY_ROTATE_DISPLAY }},
+	// Manual mode rfkill
+	{ KE_KEY,	UNIWILL_KEY_RFKILL,		{ KEY_RFKILL }},
+	{ KE_KEY,	UNIWILL_OSD_TOUCHPADWORKAROUND,	{ KEY_F21 } },
 @@ -1758,6 +1758,7 @@ struct uniwill_device_features_t *uniwill_get_device_features(void)
 		|| dmi_match(DMI_BOARD_NAME, "XxKK4NAx_XxSP4NAx")
 		|| dmi_match(DMI_BOARD_NAME, "X5KK45xS_X5SP45xS")

@@ -5,6 +5,8 @@ For modification, see [patch.diff](patch.diff) file. Inspired from [commit 26d2f
 
 Features in tuxedo-control-center that verified to working: Fan control, CPU power limit (PL1, PL2, PL4), CPU frequency control, NVIDIA cTGP, Keyboard backlight, Battery charge options.
 
+Note that screen rotation key for this chassis is added. Edit it accordingly in case your model have a different key code, then add script to enable it; for details check [guide](https://gist.github.com/PFiS1737/72f69c2714db9b0fd0ba512512e9bdb1).
+
 Based on original pkgbuild, dkms.conf and patch.diff file from [Shiina Rikka (RikkaNekoo)](https://github.com/RikkaNekoo)'s AUR package [mechrevo-drivers-dkms](https://aur.archlinux.org/packages/mechrevo-drivers-dkms).
 
 ## Warning for DrMOS high tempture on 2025 Uniwill devices

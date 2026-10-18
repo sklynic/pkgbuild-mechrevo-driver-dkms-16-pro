@@ -1,5 +1,5 @@
-# Maintainer: Shiina Rikka <rikka@rikka.im>
-# Contributor: sklynic
+# Maintainer: sklynic
+# Contributor: Shiina Rikka <rikka@rikka.im>
 _pkgname=mechrevo-drivers
 pkgname=mechrevo-drivers-dkms
 pkgver=4.25.0_rc
